@@ -1,11 +1,12 @@
 package main
 
 import (
-	ui "github.com/gizak/termui"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
+
+	ui "github.com/gizak/termui"
 )
 
 var tps int64 = 60
@@ -19,7 +20,7 @@ func main() {
 	initial()
 }
 
-func inital() {
+func initial() {
 	go handleClose(ui.EventCh())
 	tickListener()
 }
