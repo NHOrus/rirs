@@ -18,6 +18,10 @@ func main() {
 	}
 	defer ui.Close()
 	initial()
+	ech := ui.EventCh()
+	for screen := intro; screen != nil; {
+		screen = screen(ech)
+	}
 }
 
 func initial() {
